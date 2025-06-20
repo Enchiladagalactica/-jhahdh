@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Probabilidad y Estadística</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #006b1e;
+      color: white;
+      align-items: center;
+      gap: 15px;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header img {
+      width: 70px;
+      height: 70px;
+    }
+
+    header h1 {
+      margin: 0 auto;
+      font-size: 28px;
+      display: block;
+      text-align: center
+      ;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .seccion {
+      margin-bottom: 30px;
+    }
+
+    .contenedor {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tarjeta {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 320px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .tarjeta img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .contenedor-botones {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 3rem;
+      background-color: #f4f4f4;
+    }
+
+    .boton {
+      padding: 12px 24px;
+      font-size: 16px;
+      text-decoration: none;
+      color: white;
+      background-color: #006b1e;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #006b1e;
+    }
+    
+    footer {
+      text-align: right;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header class="center">
+    <h1>Probabilidad y Estadística</h1>
+    <p>La probabilidad es una medida que muestra cuánto de probable es que ocurra un evento. En concreto, la probabilidad de un evento es un valor entre 0 y 
+      1 que indica qué tan posible es que suceda dicho evento, de manera que cuanto mayor sea la probabilidad de un evento, significa que más fácil es que ocurra.</p>
+  </header>
+
+  <main>
+    <div class="seccion">
+      <p>La probabilidad y la estadística son dos ramas matemáticas que se encargan de estudiar los experimentos aleatorios. 
+    En concreto, la probabilidad es la rama que cuantifica la posibilidad de que ocurra cada suceso de un experimento aleatorio, 
+    mientras que la estadística es la rama que analiza e interpreta los resultados de un experimento aleatorio.</p>
+  <p>PROBABILIDAD: se entiende como el grado de certidumbre que se posee respecto de que un evento ocurra o no, 
+      y constituye también una disciplina encargada de confeccionar modelos predictivos para fenómenos aleatorios, 
+      de modo de poder anticiparlos y estudiar sus consecuencias lógicas.</p>
+  <p>ESTADISTIVA: en cambio, ofrece métodos y técnicas propios para comprender lo que dichos modelos significan, 
+        ya que es una disciplina independiente, rama de las matemáticas, centrada en el estudio de la variabilidad.</p>
+    </div>
+
+    <div class="contenedor">
+      <div class="tarjeta">
+        <img src="img/TABLA.jpg" alt="Tabla de Frecuencias">
+        <p><strong>TABLA DE DISTRIBUCIÓN DE FRECUENCIAS</strong></p>
+        <p>Estudia los datos de una muestra para conocer características de una población. 
+          El objetivo de la estadística es estudiar los datos obtenidos de una muestra y a partir
+        de ellos aprender sobre el comportamiento de una población, respecto a ciertas
+        características. El estudio incluye la recopilación, la descripción y el análisis del
+        conjunto de datos, convirtiéndolos en información objetiva que genera conocimiento.</p>
+      </div>
+      <div class="tarjeta">
+        <img src="img/frecuencias-datos-agrupados.webp" alt="Datos Agrupados">
+        <p><strong>DISTRIBUCIÓN DE FRECUENCIAS AGRUPADOS</strong></p>
+        <p>Se agrupan datos en intervalos para analizar su comportamiento continuo. 
+          Para hacer una distribución de frecuencias para datos agrupados en intervalos, la única diferencia es 
+        que primero se deben agrupar el conjunto de datos en diferentes intervalos, pero el resto de cálculos se hacen
+         de la misma manera que en una distribución de frecuencias sin agrupar los datos.Los datos de esta muestra siguen una distribución
+          continua, ya que los números pueden ser decimales y por tanto pueden tomar cualquier valor.</p>
+      </div>
+      <div class="tarjeta">
+        <img src="img/a.png" alt="Histograma y Polígono">
+        <p><strong>HISTOGRAMA Y POLÍGONO DE FRECUENCIA</strong></p>
+        <p>Gráfico útil para representar variables continuas con barras consecutivas. 
+          El tipo de gráfico más usado en el caso de variables continuas, con datos agrupados en intervalos, recibe el nombre de histograma.
+        Es muy similar al gráfico de barras, con la diferencia de que, en este caso, las barras quedarán consecutivas (no habrá ningún espacio entre ellas).
+        En el eje horizontal se representan los intervalos y en el eje vertical, las frecuencias
+        Los intervalos se representan por segmentos consecutivos de igual longitud.</p>
+      </div>
+      <div class="tarjeta">
+        <img src="img/medidas-de-tendencia-central-para-datos-agrupados-la-media6-l.jpg" alt="Medidas de Tendencia">
+        <p><strong>TENDENCIA CENTRAL PARA DATOS AGRUPADOS</strong></p>
+        <p>Valores que representan el centro de un conjunto de datos. Incluye la media. 
+          Las medidas de tendencia central señalan el valor alrededor del cual están los datos de una distribución. 
+        La más conocida es el promedio o media aritmética, que consiste en sumar todos los valores y dividir el resultado entre el número total de datos. </p>
+        <img src="img/tendecia_central.png" alt="Tendencia Central">
+      </div>
+      <div class="tarjeta">
+        <img src="img/CUARTILES.jpg" alt="Cuartiles">
+        <p><strong>MEDIDAS DE POSICIÓN</strong></p>
+        <p>Cuartiles, deciles y percentiles dividen los datos en partes iguales para su análisis. Las medidas de posición son parámetros estadísticos que permiten definir un conjunto de datos. 
+          Es decir, las medidas de posición ayudan a saber cómo es un conjunto de datos.
+        En estadística, existen dos tipos de medidas de posición: las medidas de posición central, 
+        que permiten determinar los valores centrales de un conjunto de datos, y las medidas de posición no central, que sirven para dividir los datos en intervalos iguales.
+        CUARTILES (Qn):En estadística, los cuartiles son los tres valores que dividen a un conjunto de datos ordenados en cuatro partes iguales. 
+        DECILES (Dn): Los deciles son nueve valores que dividen a un conjunto de datos ordenados en diez partes iguales. 
+        CENTILES ó PERCENTILES (Cn ó Pn): Los percentiles son los valores que dividen a un conjunto de datos ordenados en cien partes iguales. </p>
+      </div>
+      <div class="tarjeta">
+        <img src="img/formulas011.jpg" alt="Dispersión">
+        <p><strong>MEDIDAS DE DISPERSIÓN</strong></p>
+        <p>Las medidas de dispersión son unas métricas estadísticas que indican la dispersión de un conjunto de datos.
+        DESVIACION ESTANDAR: también llamada desviación típica, es igual a la raíz cuadrada de la suma de los cuadrados de las desviaciones de la serie de datos partido por el número total de observaciones.
+        DESVIACIÓN MEDIA: La desviación media, también llamada desviación absoluta promedio, es la media de las desviaciones absolutas.
+        VARIANZA: La varianza es igual a la suma de los cuadrados de los residuos partido por el número total de observaciones.</p>
+      </div>
+      <div class="tarjeta">
+        <img src="img/medidas02.jpg" alt="Dispersión Agrupada">
+        <p><strong>DISPERSIÓN PARA DATOS AGRUPADOS</strong></p>
+        <p>Mide qué tan alejados están los datos respecto a una tendencia central. 
+          Las medidas de dispersión son indicadores estadísticos que permiten conocer cuánto se alejan los datos individuales de una distribución o tendencia central. Estas medidas nos brindan información valiosa sobre la variabilidad que existe dentro de un conjunto de datos. 
+        Al comprender estas variabilidades, podemos tomar decisiones informadas y obtener conclusiones más sólidas a partir de nuestros análisis.</p>
+      </div>
+      <div class="tarjeta">
+        <img src="img/tipos-correlacion.png" alt="Correlación">
+        <p><strong>MEDIDAS DE CORRELACIÓN</strong></p>
+        <p>Relación entre dos variables. Si cambian juntas, existe correlación lineal. La correlación es una medida estadística que indica el grado de relación entre dos variables. 
+          En concreto, la correlación lineal sirve para determinar cuánto de correlacionadas linealmente están dos variables distintas.
+        Dos variables están relacionadas cuando al variar los valores de una variable también cambian los valores de la otra variable. 
+        Por ejemplo, si al aumentar la variable A también aumenta la variable B, existe una correlación entre las variables A y B.</p>
+      </div>
+      <div class="tarjeta">
+        <img src="img/Probabilidad (1).png" alt="Resumen">
+        <p><strong>EN RESUMEN</strong></p>
+        <p>Ambas disciplinas permiten analizar datos, predecir eventos y aplicarse en muchas áreas. 
+          La probabilidad y estadistica es una disiplina que permite entender diferentes áreas como las materias, físicae ingeniería. Nos posibilita calcular las oportunidades que hay de que un cierto evento ocurra o no se realice y decir con más o menor precisión, lo que puede ocurrir. 
+        Aun cuando debemos entender que no son lo mismo está ligada a la estadística, valiéndose del calculo como instrumento. Son disciplinas fundamentales en matemáticas que permiten analizar datos numéricos y predecir eventos futuros.</p>
+      </div>
+    </div>
+
+    <div class="contenedor-botones">
+    <a href="OOO.html" class="boton">Anterior Página</a>
+    <a href="index.html" class="boton">Inicio</a>
+    <a href="dibujo.html" class="boton">Siguiente Página</a>
+  </div>
+  </main>
+
+  <div style="position: fixed; bottom: 10px; right: 10px; font-size: 14px; color: gray;">
+    GONZALEZ HERNADEZ LIZVET ABRIL
+  </div> 
+  
+</body>
+</html>
+

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filosofía y Bellas Artes</title>
+  <style>  
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #7a003c; /* Color IPN */
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #7a003c;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      max-width: 30%;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .contenedor-botones {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 3rem;
+      background-color: #f4f4f4;
+    }
+
+    .boton {
+      padding: 12px 24px;
+      font-size: 16px;
+      text-decoration: none;
+      color: white;
+      background-color: #7a003c;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #5e002f;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 14px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Filosofía y Bellas Artes</h1>
+    <p>Grandes pensadores y expresiones del arte humano.</p>
+  </header>
+
+  <main class="container">
+    <!-- Columna de Filósofos -->
+    <section class="column">
+      <h2>📚 Filósofos</h2>
+      <div class="card">
+        <img src="img/10059851.png" alt="Sócrates">
+        <h3>Sócrates</h3>
+        <p>Fue un filósofo ateniense considerado el padre de la filosofía occidental.
+          No escribió nada; su pensamiento fue recogido por sus discípulos, especialmente Platón.
+          Enseñaba mediante el diálogo (método socrático).
+          Fue condenado a muerte por corromper a la juventud y no respetar a los dioses de la ciudad; murió bebiendo cicuta.</p>
+      </div>
+      <div class="card">
+        <img src="img/3159712.png" alt="Platón">
+        <h3>Platón</h3>
+        <p>Discípulo de Sócrates y maestro de Aristóteles.
+          Fundó la Academia, la primera institución educativa del mundo occidental.
+          Escribió diálogos filosóficos donde su maestro Sócrates era el protagonista.
+          Desarrolló la teoría del mundo de las Ideas o Formas.</p>
+      </div>
+      <div class="card">
+        <img src="img/1483105.png" alt="Aristóteles">
+        <h3>Aristóteles</h3>
+        <p>Alumno de Platón y maestro de Alejandro Magno.
+          Fundó el Liceo, donde impartía clases caminando.
+          Escribió sobre lógica, biología, ética, política, y más.
+          Su pensamiento dominó la filosofía occidental durante siglos.</p>
+      </div>
+      <div class="card">
+        <img src="img/10059801.png" alt="René Descartes">
+        <h3>René Descartes</h3>
+        <p>Filósofo, matemático y científico.
+          Considerado el padre de la filosofía moderna.         
+          Vivió muchos años en los Países Bajos.
+          Murió en Suecia al ser invitado por la reina Cristina para enseñarle filosofía.</p>
+      </div>
+      <div class="card">
+        <img src="img/1354832.png" alt="Immanuel Kant">
+        <h3>Immanuel Kant</h3>
+        <p>Vivió toda su vida en Königsberg (hoy Kaliningrado, Rusia).
+          Llevó una vida metódica y tranquila.          
+          Revolucionó la filosofía con su “crítica” a la razón.         
+          Nunca se casó ni viajó lejos de su ciudad natal.</p>
+      </div>
+      <div class="card">
+        <img src="img/14233546.png" alt="Friedrich Nietzsche">
+        <h3>Lucio Anneo Séneca</h3>
+        <p>Nació en Córdoba (España), pero vivió en Roma.
+          Fue filósofo estoico, político y tutor del emperador Nerón.         
+          Fue acusado de conspiración y obligado a suicidarse.          
+          Escribió obras sobre ética, moral y la muerte.</p>
+      </div>
+      <div class="card">
+        <img src="img/arthur.png" alt="Karl Marx">
+        <h3>Arthur Schopenhauer</h3>
+        <p>Filósofo pesimista influenciado por el budismo y Kant.
+          Vivió solo y era muy crítico de sus colegas.         
+          No fue reconocido en vida, pero influyó en Nietzsche y Freud.         
+          Creía que el sufrimiento era esencial en la vida.</p>
+      </div>
+      <div class="card">
+        <img src="img/Sartre.png" alt="John Locke">
+        <h3>Paul Sartre</h3>
+        <p>Filósofo, novelista y dramaturgo.
+          Principal representante del existencialismo.         
+          Luchó contra el nazismo; rechazó el Premio Nobel de Literatura en 1964.         
+          Tuvo una relación libre y profunda con la filósofa Simone de Beauvoir.</p>
+      </div>
+      <div class="card">
+        <img src="img/th.jpeg" alt="John Locke">
+        <h3>José Ortega y Gasset</h3>
+        <p>Filósofo, ensayista y periodista español.
+          Estudió en Alemania, donde adoptó ideas del idealismo.          
+          Fue profesor universitario y fundó la Revista de Occidente.         
+          Crítico del atraso cultural de España, buscó modernizar el pensamiento español.</p>
+      </div>
+    </section>
+
+    <!-- Columna de Bellas Artes -->
+    <section class="column">
+      <h2>🎨 Bellas Artes</h2>
+      <div class="card">
+        <img src="img/4d9e29361d4dcdc6eabf5a0a035c900d.jpg" alt="Pintura">
+        <h3>Pintura</h3>
+        <p>Arte de representar imágenes sobre una superficie usando colores, formas y líneas. Puede ser realista o abstracta.
+          Arte de plasmar imágenes sobre una superficie, utilizando pigmentos aplicados con herramientas como pinceles, espátulas o incluso las manos, con fines estéticos, expresivos o simbólicos.
+        </p>
+      </div>
+      <div class="card">
+        <img src="img/3845874.png" alt="Música">
+        <h3>Música</h3>
+        <p>Arte de combinar sonidos y silencios con ritmo, melodía y armonía para expresar emociones o ideas.
+          Arte de organizar sonidos y silencios en el tiempo mediante los elementos de ritmo, melodía y armonía, con el propósito de expresar sentimientos, ideas o ambientes.
+        </p>
+      </div>
+      <div class="card">
+        <img src="img/12820746.png" alt="Danza">
+        <h3>Danza</h3>
+        <p>Arte del movimiento corporal expresivo, realizado con ritmo, normalmente acompañado de música.
+          Arte del movimiento del cuerpo humano realizado con intención estética y frecuentemente acompañado de música, que puede expresar emociones, contar historias o seguir patrones rítmicos.
+        </p>
+      </div>
+      <div class="card">
+        <img src="img/p.png" alt="Escultura">
+        <h3>Escultura</h3>
+        <p>Arte de crear formas tridimensionales (en piedra, metal, madera, etc.) que representan figuras, personas, objetos o ideas.
+          Arte de modelar, tallar o construir formas tridimensionales en materiales sólidos como piedra, metal, madera o barro, con fines artísticos o simbólicos.
+        </p>
+      </div>
+      <div class="card">
+        <img src="img/7042398.png" alt="Arquitectura">
+        <h3>Arquitectura</h3>
+        <p>El arte de diseñar y construir edificaciones funcionales y estéticamente atractivas.
+          Arte y técnica de diseñar, proyectar y construir edificaciones que sean funcionales, duraderas y estéticamente armoniosas en su entorno.
+        </p>
+      </div>
+      <div class="card">
+        <img src="img/vintage-floral-books-watercolor-png.webp" alt="Literatura">
+        <h3>Literatura</h3>
+        <p>Arte de la palabra escrita u oral que expresa ideas, emociones o historias mediante textos como poemas, cuentos o novelas.
+          Arte de la expresión verbal escrita u oral que utiliza el lenguaje de manera creativa, estética y simbólica para comunicar ideas, emociones, historias o reflexiones.
+        </p>
+      </div>
+      <div class="card">
+        <img src="img/Cinema-Transparent.png" alt="Cine">
+        <h3>Cine</h3>
+        <p>Arte de contar historias o expresar ideas a través de imágenes en movimiento, sonido y montaje.
+          Arte de narrar historias o transmitir ideas a través de la proyección de imágenes en movimiento, combinadas con sonido, música, diálogo y edición.
+        </p>
+      </div>
+      <div class="card">
+        <img src="img/photographer-with-camera-drawing-png-20.png" alt="Fotografía">
+        <h3>Fotografía</h3>
+        <p>Arte de capturar imágenes mediante una cámara, con fines expresivos, documentales o estéticos.
+          Arte y técnica de capturar imágenes fijas mediante la acción de la luz sobre una superficie fotosensible, ya sea analógica o digital, con fines artísticos, documentales o personales.
+        </p>
+      </div>
+      <div class="card">
+        <img src="img/comic.png" alt="Comic">
+        <h3>Cómic</h3>
+        <p>Arte que combina imágenes y texto en secuencia para narrar historias o transmitir ideas de forma gráfica.
+          Arte narrativo que combina ilustraciones y texto, organizados en viñetas o secuencias gráficas, para contar historias, expresar ideas o hacer crítica social de manera visual.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div class="contenedor-botones">
+    <a href="011.html" class="boton">Anterior Página</a>
+    <a href="index.html" class="boton">Inicio</a>
+    <a href="OOO.html" class="boton">Siguiente Página</a>
+  </div>
+
+  <footer>
+    GONZALEZ HERNADEZ LIZVET ABRIL
+  </footer>
+
+</body>
+</html>

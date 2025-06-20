@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dibujo Técnico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      background: #f2f4f8;
+      color: #333;
+    }
+
+    .contenedor-botones {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 3rem;
+      background-color: #f4f4f4;
+    }
+
+    .boton {
+      padding: 12px 24px;
+      font-size: 16px;
+      text-decoration: none;
+      color: white;
+      background-color: #f4ad43;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #f4ad43;
+    }
+    
+    header {
+      background: #f4ad43;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+  
+    section {
+      background: white;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #f4ad43;
+      font-size: center;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+    .icono {
+      width: 40px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .cuadros {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .cuadro {
+      background-color: #f9fafb;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .cuadro img {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 5px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Dibujo Técnico</h1>
+    <p>Donde no hay dibujo, no hay verdadera comprensión.</p>
+  </header>
+
+  <section id="definicion">
+    <h2>¿Qué es el Dibujo Técnico?</h2>
+    <div style="display: flex; align-items: center; gap: 5px;">
+    <img src="img/4809169.png" alt="Dibujo técnico en CAD">
+    <p>
+      El dibujo técnico es una rama del dibujo que se dedica a representar los objetos de forma gráfica y sistemática con el fin de entregar información detallada, clara y precisa acerca de su construcción y funcionamiento. 
+      Proporciona instrucciones exactas que permiten no solamente fabricar objetos o construir edificaciones, sino también hacer mantenimiento, análisis, reparaciones y mejoras de diseños terminados.
+    </p>
+    </div>
+  </section>
+
+  <section id="tipos">
+    <h2>Tipos de Dibujo Técnico</h2>
+    <ul>
+      <li><img src="img/4758469.png" class="icono"> <strong>Arquitectónico:</strong> planos de edificaciones.  Este tipo de dibujo es esencial para la planificación y construcción de edificios, ya que permite a los arquitectos, ingenieros y constructores entender cómo debe ser ejecutada la obra. 
+        Incluye planos de plantas, cortes, elevaciones, detalles constructivos, perspectivas y vistas isométricas.</li>
+      <li><img src="img/13596070.png" class="icono"> <strong>Mecánico:</strong> piezas y sistemas industriales. Este tipo de dibujo proporciona detalles exactos sobre las dimensiones, tolerancias, materiales y características de las piezas. 
+        Los planos mecánicos son utilizados en la fabricación de productos como maquinaria, motores, vehículos, herramientas y equipos industriales.</li>
+      <li><img src="img/aaa.png" class="icono"> <strong>Eléctrico:</strong> redes eléctricas. Este tipo de dibujo incluye diagramas y planos que muestran cómo se deben realizar las conexiones eléctricas, los sistemas de distribución de energía y los dispositivos de protección. 
+        Se utiliza tanto en instalaciones residenciales como industriales, y es esencial para garantizar que las instalaciones sean seguras, eficientes y cumplan con las normativas vigentes.</li>
+      <li><img src="img/3556561.png" class="icono"> <strong>Electrónico:</strong> componentes electrónicos. Estos dibujos muestran cómo los componentes electrónicos se conectan y cómo fluye la corriente a través de ellos. Se utiliza en el diseño de dispositivos electrónicos como computadoras, teléfonos móviles, televisores y sistemas de automatización.</li>
+      <li><img src="img/992224.png" class="icono"> <strong>Topográfico:</strong> terrenos y relieves. Este tipo de dibujo se utiliza en la planificación de proyectos de construcción, urbanismo, y también en estudios geográficos y ambientales. 
+        Los planos topográficos son esenciales para obtener información precisa sobre el terreno antes de comenzar una obra.</li>
+      <li><img src="img/6348127.png" class="icono"> <strong>Geológico:</strong> capas terrestres. Este tipo de dibujo es fundamental en la minería, la exploración de petróleo y gas, y en la evaluación de riesgos geotécnicos. 
+        Los geólogos utilizan estos dibujos para estudiar la composición y disposición de las rocas y los minerales en una zona específica.</li>
+      <li><img src="img/2729510.png" class="icono"> <strong>Sanitario:</strong> tuberías y drenajes.  Este tipo de dibujo incluye la representación de sistemas de abastecimiento de agua potable, alcantarillado y evacuación de aguas residuales, así como el diseño de sistemas de calefacción y ventilación. 
+        Los planos sanitarios son cruciales para garantizar que los sistemas funcionen correctamente y cumplan con las normativas de salud y seguridad.</li>
+    </ul>
+  </section>
+
+  <section id="aplicaciones">
+    <h2>Aplicaciones</h2>
+    <p>El dibujo técnico es indispensable en:</p>
+    <div style="display: flex; align-items: center; gap: 5px;">
+      <img src="img/dibujo-tecnico.png" alt="Imagen derecha" width="110" height="150">
+    <ul>
+      <li>Diseño y construcción de edificios.</li>
+      <li>Fabricación de productos mecánicos y electrónicos.</li>
+      <li>Diseño de circuitos e instalaciones eléctricas.</li>
+      <li>Proyectos topográficos y de urbanismo.</li>
+    </ul>
+    </div>
+  </section>
+
+  <section id="metodologia">
+    <div class="cuadros">
+      <!-- Cuadro 1 - Inicio -->
+      <div class="cuadro">
+        <img src="img/763738.png" alt="Inicio">
+        
+        <p>El dibujo técnico comienza con una idea o un concepto que debe ser representado gráficamente. Este primer paso incluye la elección de escalas, símbolos y normativas a seguir.</p>
+      </div>
+
+      <!-- Cuadro 2 - Desarrollo -->
+      <div class="cuadro">
+        <img src="img/2558099.png" alt="Desarrollo">
+        
+        <p>En esta etapa se realiza el trabajo detallado: elaboración de planos, esquemas o diagramas, con precisión en las medidas y materiales, siguiendo las normativas técnicas establecidas.</p>
+      </div>
+
+      <!-- Cuadro 3 - Conclusión -->
+      <div class="cuadro">
+        <img src="img/4231091.png" alt="Conclusión">
+        
+        <p>El dibujo técnico se finaliza con una revisión exhaustiva para garantizar que cumple con todos los requisitos y normas. Luego se entrega como un documento listo para su construcción o fabricación.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="contenedor-botones">
+    <a href="probabilidad.html" class="boton">Anterior Página</a>
+    <a href="index.html" class="boton">Inicio</a>
+    <a href="011.html" class="boton">Siguiente Página</a>
+  </div>
+
+  <div style="position: fixed; bottom: 10px; right: 10px; font-size: 14px; color: gray;">
+    GONZALEZ HERNADEZ LIZVET ABRIL
+  </div>
+
+</body>
+</html>
+

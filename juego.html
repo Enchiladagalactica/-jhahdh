@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROYECTO - CBTis 29</title>
+  <style>
+    :root {
+      --guinda: #800000;
+      --gris: #f2f2f2;
+      --texto: #333;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--gris);
+      color: var(--texto);
+    }
+
+    header {
+      background-color: var(--guinda);
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      flex-wrap: wrap;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .titulo-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      flex: 1 1 100%;
+    }
+
+    .titulo-header img {
+      height: 50px;
+    }
+
+    .titulo-header h1 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .menu-toggle {
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .menu-contenido {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 60px;
+      background-color: var(--guinda);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      flex-direction: column;
+      z-index: 1001;
+    }
+
+    .menu-contenido a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      display: block;
+      border-bottom: 1px solid #660000;
+    }
+
+    .menu-contenido a:last-child {
+      border-bottom: none;
+    }
+
+    .menu-contenido.activo {
+      display: flex;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-left: 6px solid var(--guinda);
+    }
+
+    main h2 {
+      color: var(--guinda);
+      font-size: 24px;
+      margin-top: 30px;
+      border-bottom: 2px solid var(--guinda);
+      padding-bottom: 5px;
+    }
+
+    main p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-top: 15px;
+      text-align: justify;
+    }
+
+    .contenedor-intro {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .texto-intro {
+      flex: 1 1 60%;
+    }
+
+    .video-intro {
+      flex: 1 1 35%;
+    }
+
+    .video-intro iframe {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    footer.info-contacto {
+      background-color: var(--guinda);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 15px 20px;
+      gap: 15px;
+    }
+
+    footer .info-logo img {
+      height: 60px;
+    }
+
+    footer .info-datos {
+      flex: 1;
+      font-size: 14px;
+    }
+
+    footer .info-datos p {
+      margin: 5px 0;
+    }
+
+    /* 🔽 ESTO ES PARA MÓVILES (pantallas menores de 768px) */
+    @media (max-width: 768px) {
+      .titulo-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .titulo-header h1 {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      main {
+        margin: 10px;
+        padding: 15px;
+      }
+
+      .contenedor-intro {
+        flex-direction: column;
+      }
+
+      .texto-intro,
+      .video-intro {
+        flex: 1 1 100%;
+      }
+
+      .menu-container {
+        position: relative;
+        z-index: 2000;
+        text-align: right;
+        margin-top: 10px;
+      }
+
+      .menu-toggle {
+        font-size: 16px;
+        background-color: white;
+        color: var(--guinda);
+        border: 2px solid var(--guinda);
+        padding: 6px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .menu-contenido {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+        background-color: white;
+        padding: 10px 20px;
+        border-top: 2px solid var(--guinda);
+        border-bottom: 2px solid var(--guinda);
+      }
+
+      .menu-contenido a {
+        font-size: 13px;
+        background-color: var(--guinda);
+        color: white;
+        text-decoration: none;
+        padding: 6px 10px;
+        margin: 5px 0;
+        border-radius: 4px;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+      }
+
+      .menu-contenido.activo {
+        display: flex;
+      }
+
+      footer.info-contacto {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      footer .info-logo img {
+        height: 50px;
+      }
+
+      footer .info-datos {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="mainHeader">
+    <div class="titulo-header">
+      <img src="img/CBTIS132.png" alt="Logo CBTis 29">
+      <img src="img/logo09.png" alt="Logo CBTis 29">
+      <h1>Centro de Bachillerato Tecnológico industrial y de servicios No. 29 "José María Morelos y Pavón"</h1>
+    </div>
+
+    <div class="menu-container">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+
+    <div class="menu-contenido" id="menuMaterias">
+      <a href="filosofia.html">Filosofía</a>
+      <a href="fisica.html">Física</a>
+      <a href="probabilidad.html">Probabilidad y Estadística</a>
+      <a href="dibujo.html">Dibujo Técnico</a>
+      <a href="011.html">MV-S2</a>
+      <a href="comunidad.html">Comunidad</a>
+    </div>
+  </header>
+
+  <main>
+    <h2>Hablemos un poco de esta paguina.</h2>
+    <div class="contenedor-intro">
+      <div class="texto-intro">
+        <p>
+          Este proyecto tiene como objetivo integrar los aprendizajes obtenidos durante el ciclo escolar en las distintas áreas de conocimiento, como lo son filosofía, física, matemáticas aplicadas y programación. 
+          Se ha diseñado esta plataforma digital con el fin de presentar el contenido de forma clara, accesible y estructurada, inspirada en la estética profesional del Centro de Bachillerato Tecnológico industrial y de servicios No. 29 "José María Morelos y Pavón".
+          Existen plataformas donde puedes arrastrar y soltar bloques, en lugar de escribir código. Son ideales para principiantes, niños y personas que están empezando. Algunas de las más recomendadas son:
+          <p><a href="https://scratch.mit.edu">Scratch.</a> Perfecto para juegos, animaciones e historias.</p>
+          <p><a href="https://appinventor.mit.edu">App Inventor.</a> Para crear aplicaciones móviles fácilmente.</p>
+        </p>
+      </div>
+      <div class="video-intro">
+        <iframe width="100%" height="250" src="video/Promoción CBTis 29.mp4" frameborder="0" allowfullscreen></iframe>
+      </div>
+    <p>
+      Se han diseñado páginas independientes para cada materia, enlazadas desde el menú principal. Estas contienen teoría, ejemplos, ejercicios y recursos visuales que refuerzan el aprendizaje. El sitio está construido en HTML5 y CSS3, con un diseño adaptativo y coherente con la identidad institucional del CBTiS 29. 
+      Una de las principales utilidades de la programación es que permite automatizar tareas repetitivas, ahorrar tiempo y evitar errores. Por ejemplo, se pueden crear programas para enviar correos, hacer cálculos complejos o gestionar inventarios. Además, es muy útil en la educación, donde los estudiantes pueden aprender lógica, resolución de problemas y creatividad a través del desarrollo de sus propios proyectos.
+    </p>
+    <p>
+      La programación de esta plataforma se realizó con estándares web modernos, utilizando estructuras semánticas, estilos CSS limpios y organizados. 
+      El diseño toma como base el sitio oficial del CBTiS 29, buscando transmitir una imagen seria, moderna y funcional, ideal para presentar proyectos académicos.
+    </p>
+  </main>
+
+  <footer class="info-contacto">
+    <div class="info-logo">
+      <img src="img/logo4.png" alt="Logo CBTis 29">
+    </div>
+    <div class="info-datos">
+      <p><strong>Dirección:</strong> Av. Insurgentes S/N, Ecatepec de Morelos, Mexico, 55020</p>
+      <p><strong>Teléfono:</strong> 55 1115 6504</p>
+      <p><strong>Correo Institucional</strong>contacto.cbtis29@gmail.com</p>
+      <p><strong>Sitios web y enlaces de medios sociales</strong><p><a href="http://www.dgeti.sep.gob.mx/">DGETI</a></p></p>
+      <p><a href="http://www.cbtis29.edu.mx/">CBTiS 29</a></p>
+    </div>
+  </footer>
+
+  <div style="position: fixed; bottom: 10px; right: 10px; font-size: 14px; color: gray;">
+    GONZALEZ HERNADEZ LIZVET ABRIL
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuMaterias");
+      menu.classList.toggle("activo");
+    }
+
+    let lastScrollTop = 0;
+    const header = document.getElementById("mainHeader");
+
+    window.addEventListener("scroll", function () {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScroll > lastScrollTop && currentScroll > 100) {
+        header.style.transform = "translateY(-100%)";
+      } else {
+        header.style.transform = "translateY(0)";
+      }
+
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+  </script>
+
+</body>
+</html>

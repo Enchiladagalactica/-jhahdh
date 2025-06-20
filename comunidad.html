@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Comunidad</title>
+  <style>
+  /* Estilo general del texto */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  margin: 0;
+  padding: 0 15px;
+  background-color: #f9f9f9;
+}
+
+header {
+      background-color: #198da4;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+      background-color: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    p {
+      font-size: 16px;
+      text-align: justify;
+    }
+
+/* Encabezados */
+h1 {
+  color: #ffffff;
+  margin-top: 30px;
+  border-bottom: 2px solid #198da4;
+  padding-bottom: 5px;
+}
+
+h2{
+  color: #198da4;
+  margin-top: 30px;
+  border-bottom: 2px solid #198da4;
+  padding-bottom: 5px;
+}
+h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Listas */
+ul {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+/* Contenedor de botones de navegación */
+.contenedor-botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+/* Botones de navegación */
+.boton {
+  padding: 12px 24px;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  background-color: #198da4;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #146c75;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: gray;
+}
+
+/* Juego del Gato */
+#tablero-gato {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 5px;
+  justify-content: center;
+  margin: auto;
+}
+
+#tablero-gato div {
+  width: 100px;
+  height: 100px;
+  font-size: 40px;
+  background: rgb(190, 250, 147);
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Canvas del rompecabezas */
+canvas {
+  border: 2px solid #444;
+  margin-top: 15px;
+  max-width: 100%;
+}
+
+/* Estilo del mensaje del rompecabezas */
+#mensaje {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green;
+  text-align: center;
+}
+
+/* Select del rompecabezas */
+select {
+  padding: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Contenedor de juegos */
+.contenedor-juegos {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Cada juego individual */
+.juego-gato, .juego-rompecabezas {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+/* Oculta los juegos hasta que se muestran con JS */
+.juego {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Botones internos de juegos */
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #198da4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #146c75;
+}
+
+/* Imágenes de explicación HTML y CSS */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+  display: block;
+}
+
+
+    ul {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+
+    .contenedor-botones {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .boton {
+      padding: 12px 24px;
+      font-size: 16px;
+      text-decoration: none;
+      color: white;
+      background-color: #198da4;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 0 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #146c75;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 14px;
+      color: gray;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    nav {
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+    }
+
+    .juego {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #tablero-gato {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 5px;
+      justify-content: center;
+      margin: auto;
+    }
+
+    #tablero-gato div {
+      width: 100px;
+      height: 100px;
+      font-size: 40px;
+      background: rgb(190, 250, 147);
+      border: 1px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    canvas {
+      border: 2px solid #444;
+      margin-top: 15px;
+      touch-action: none;
+    }
+
+    #mensaje {
+      margin-top: 10px;
+      font-weight: bold;
+      color: green;
+    }
+
+    select {
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    .contenedor-juegos {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .juego-gato, .juego-rompecabezas {
+      flex: 1;
+      min-width: 300px;
+      max-width: 450px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>En esta paguina les voy a explicar para qué nos sirve la Programación y cómo la podemos ocupar.</h1>
+  </header>
+
+  <main>
+    <h2>¿Para qué nos sirve?</h2>
+    <ul>
+      <li>Automatizar tareas: Evita hacer procesos repetitivos manualmente.</li>
+      <li>Resolver problemas: Permite diseñar soluciones lógicas y eficientes.</li>
+      <li>Crear software: Como aplicaciones móviles, videojuegos, programas de escritorio o páginas web.</li>
+      <li>Controlar dispositivos: Desde robots hasta electrodomésticos inteligentes.</li>
+      <li>Analizar datos: Usada en ciencia de datos, inteligencia artificial y estadísticas.</li>
+      <li>Comunicar ideas: A través de simulaciones, herramientas interactivas y gráficos.</li>
+      La programación nos permite darle vida a la tecnología. Con ella podemos crear sitios web interactivos, aplicaciones móviles, videojuegos, sistemas automatizados y mucho más. 
+      En el contexto diario, aprender a programar ayuda a resolver problemas, automatizar tareas, mejorar el pensamiento lógico y prepararse para el futuro laboral.
+    </ul>
+
+    <h2>¿Cómo podemos ocupar la programación?</h2>
+    <ul>
+       <li>En la escuela: Para hacer simulaciones, juegos educativos o automatizar tareas con herramientas como Scratch o App Inventor.</li>
+      <li>En el trabajo: Para crear software de ventas, bases de datos, páginas web empresariales, etc.</li>
+      <li>En la vida diaria: Automatizar tareas con scripts, controlar luces inteligentes, organizar tu tiempo con apps personalizadas.</li>
+      <li>En el emprendimiento: Crear tus propias apps, juegos o sitios web para ofrecer productos o servicios.</li>
+    </ul>
+
+    <h2>¿Cómo podemos ocupar la programación en la vida diaria?</h2>
+    <ul>
+      <li>Automatizar tareas del hogar con dispositivos inteligentes.</li>
+      <li>Hacer aplicaciones personales, como agendas o recordatorios.</li>
+      <li>Crear macros o scripts para organizar archivos en la computadora.</li>
+    </ul>
+
+    <h2>¿Cómo podemos hacer nuestra propia página web?</h2>
+    <p>Es un conjunto de información que puedes ver en internet, como textos, imágenes, videos o botones. Puede ser una página personal, educativa o de negocios.
+      Crear una página web es más fácil de lo que parece. Solo necesitas un editor como <strong>Visual Studio Code</strong> y conocimientos básicos de <strong>HTML</strong> y <strong>CSS</strong>. 
+      HTML sirve para crear la estructura (títulos, párrafos, imágenes) y CSS para darle estilo (colores, tamaños, posición).
+      <p>Aquí tienes los pasos básicos:</p>
+    <ul>
+      <li>1. Abre Visual Studio Code y crea un archivo llamado <code>index.html</code>.</li>
+      <li>2. Escribe el código HTML y CSS dentro del mismo archivo.</li>
+      <li>3. Guarda el archivo y ábrelo con tu navegador para ver tu página.</li>
+    </ul>
+    <p>
+      <strong>Estructura básica de una página web (HTML)</strong><br>
+      <img src="img/html.png"><br>
+      <img src="img/html - copia.png"> Es toda la página.<br>
+      <img src="img/head.png"> Contiene el título que aparece en la pestaña.<br>
+      <img src="img/body.png"> Es lo que se ve en la página.
+    </p>
+    <strong>Agregar estilo (CSS)</strong>
+    <p>En este código ya tenemos agregados los estilos que son los "CSS".</p>
+    <img src="img/css.png">
+    
+    <h2>Conclusión</h2>
+    <p>La programación es una herramienta poderosa que nos permite comunicarnos con las computadoras para crear soluciones, automatizar tareas y desarrollar tecnología.
+       Su utilidad abarca desde la educación hasta la vida diaria, pasando por áreas como la ciencia, los negocios y el entretenimiento. 
+      Aprender a programar nos abre las puertas a un mundo de oportunidades y nos da la capacidad de transformar ideas en realidades digitales.
+      Crear páginas web y aprender a programar son herramientas poderosas que están al alcance de todos. 
+      Invita a tu comunidad a explorar este mundo y desarrollar proyectos útiles para la escuela, el trabajo o incluso para emprender.</p>
+  </main>
+
+  <main>
+    <div class="contenedor-juegos">
+
+      <section id="gato" class="juego juego-gato">
+        <h2>Juego del Gato</h2>
+        <p>Nosotros podemos hacer nuestro propio juego...</p>
+        <div id="tablero-gato"></div>
+        <p id="mensaje-gato"></p>
+        <button onclick="reiniciarGato()">Reiniciar</button>
+      </section>
+
+      <section class="juego-rompecabezas">
+        <h2>🧩 Rompecabezas para la Familia</h2>
+        <p>Selecciona el nivel de dificultad:</p>
+        <select id="nivel">
+          <option value="3">Fácil (3x3)</option>
+          <option value="4">Medio (4x4)</option>
+          <option value="5">Difícil (5x5)</option>
+        </select>
+        <button onclick="iniciarJuego()">Iniciar juego</button><br>
+        <canvas id="rompecabezas"></canvas>
+        <div id="mensaje"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="contenedor-botones">
+    <a href="011.html" class="boton">Anterior Página</a>
+    <a href="index.html" class="boton">Inicio</a>
+    <a href="filosofia.html" class="boton">Siguiente Página</a>
+  </div>
+
+  <div class="footer">
+    GONZALEZ HERNADEZ LIZVET ABRIL
+  </div>
+
+  <script>
+    function mostrarJuego(nombre) {
+      document.querySelectorAll('.juego').forEach(j => j.style.display = 'none');
+      document.getElementById(nombre).style.display = 'block';
+    }
+    mostrarJuego('gato');
+
+    const tableroGato = document.getElementById("tablero-gato");
+    const mensajeGato = document.getElementById("mensaje-gato");
+    let turno = "X", celdas = Array(9).fill("");
+
+    function crearTableroGato() {
+      tableroGato.innerHTML = "";
+      celdas = Array(9).fill("");
+      mensajeGato.textContent = "";
+      turno = "X";
+      for (let i = 0; i < 9; i++) {
+        const celda = document.createElement("div");
+        celda.dataset.index = i;
+        celda.addEventListener("click", jugarGato);
+        tableroGato.appendChild(celda);
+      }
+    }
+
+    function jugarGato(e) {
+      const i = e.target.dataset.index;
+      if (celdas[i] !== "") return;
+      celdas[i] = turno;
+      e.target.textContent = turno;
+      if (verificarGanador()) {
+        mensajeGato.textContent = `¡Ganó ${turno}!`;
+        tableroGato.querySelectorAll("div").forEach(c => c.removeEventListener("click", jugarGato));
+      } else if (!celdas.includes("")) {
+        mensajeGato.textContent = "¡Empate!";
+      } else {
+        turno = turno === "X" ? "O" : "X";
+      }
+    }
+
+    function verificarGanador() {
+      const combos = [
+        [0,1,2], [3,4,5], [6,7,8],
+        [0,3,6], [1,4,7], [2,5,8],
+        [0,4,8], [2,4,6]
+      ];
+      return combos.some(c => celdas[c[0]] && celdas[c[0]] === celdas[c[1]] && celdas[c[1]] === celdas[c[2]]);
+    }
+
+    function reiniciarGato() {
+      crearTableroGato();
+    }
+    crearTableroGato();
+
+    const canvas = document.getElementById("rompecabezas");
+    const ctx = canvas.getContext("2d");
+    let piezas = [];
+    let tamaño = 100;
+    let filas = 3;
+    let columnas = 3;
+    let imagen = new Image();
+    let seleccionado = null;
+
+    imagen.src = "https://picsum.photos/400";
+
+    function iniciarJuego() {
+      document.getElementById("mensaje").textContent = "";
+      filas = columnas = parseInt(document.getElementById("nivel").value);
+      tamaño = 400 / columnas;
+      canvas.width = canvas.height = 400;
+      piezas = [];
+
+      for (let y = 0; y < filas; y++) {
+        for (let x = 0; x < columnas; x++) {
+          piezas.push({ x: x * tamaño, y: y * tamaño });
+        }
+      }
+      piezas.sort(() => Math.random() - 0.5);
+      imagen.onload = () => dibujar();
+      dibujar();
+    }
+
+    function dibujar() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < piezas.length; i++) {
+        const sx = (i % columnas) * tamaño;
+        const sy = Math.floor(i / columnas) * tamaño;
+        const dx = piezas[i].x;
+        const dy = piezas[i].y;
+        ctx.drawImage(imagen, sx, sy, tamaño, tamaño, dx, dy, tamaño, tamaño);
+      }
+    }
+
+    function seleccionarPieza(e) {
+      const x = Math.floor(e.offsetX / tamaño) * tamaño;
+      const y = Math.floor(e.offsetY / tamaño) * tamaño;
+      for (let i = 0; i < piezas.length; i++) {
+        if (piezas[i].x === x && piezas[i].y === y) {
+          seleccionado = i;
+          break;
+        }
+      }
+    }
+
+    function soltarPieza(e) {
+      if (seleccionado === null) return;
+      const x = Math.floor(e.offsetX / tamaño) * tamaño;
+      const y = Math.floor(e.offsetY / tamaño) * tamaño;
+      for (let i = 0; i < piezas.length; i++) {
+        if (piezas[i].x === x && piezas[i].y === y) {
+          [piezas[i], piezas[seleccionado]] = [piezas[seleccionado], piezas[i]];
+          break;
+        }
+      }
+      seleccionado = null;
+      dibujar();
+      verificar();
+    }
+
+    canvas.addEventListener("mousedown", seleccionarPieza);
+    canvas.addEventListener("mouseup", soltarPieza);
+
+    canvas.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      const toque = e.touches[0];
+      const rect = canvas.getBoundingClientRect();
+      seleccionarPieza({ offsetX: toque.clientX - rect.left, offsetY: toque.clientY - rect.top });
+    });
+
+    canvas.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      const toque = e.changedTouches[0];
+      const rect = canvas.getBoundingClientRect();
+      soltarPieza({ offsetX: toque.clientX - rect.left, offsetY: toque.clientY - rect.top });
+    });
+
+    function verificar() {
+      let correcto = true;
+      for (let i = 0; i < piezas.length; i++) {
+        const esperadoX = (i % columnas) * tamaño;
+        const esperadoY = Math.floor(i / columnas) * tamaño;
+        if (piezas[i].x !== esperadoX || piezas[i].y !== esperadoY) {
+          correcto = false;
+          break;
+        }
+      }
+      if (correcto) {
+        document.getElementById("mensaje").textContent = "🎉 ¡Felicidades, completaste el rompecabezas!";
+      }
+    }
+
+    window.onload = iniciarJuego;
+  </script>
+</body>
+</html>

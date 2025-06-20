@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Ahorcado</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .word-display {
+            font-size: 2em;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        .hanged-man img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .letter-buttons button {
+            font-size: 1.2em;
+            margin: 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        .letter-buttons button:disabled {
+            background-color: #ccc;
+        }
+
+        #message {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Juego del Ahorcado</h1>
+        <div id="word-display" class="word-display"></div>
+        <div id="hanged-man" class="hanged-man">
+            <img src="images/hang0.png" id="hangman-image" alt="Hanged man">
+        </div>
+        <div class="letter-buttons">
+            <!-- Letras para adivinar -->
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const words = ["programacion", "javascript", "computadora", "ahorcado", "desarrollo"];
+        let selectedWord = words[Math.floor(Math.random() * words.length)];
+        let displayedWord = Array(selectedWord.length).fill("_");
+        let attempts = 6;
+        let guessedLetters = [];
+
+        const wordDisplay = document.getElementById("word-display");
+        const hangmanImage = document.getElementById("hangman-image");
+        const message = document.getElementById("message");
+        const letterButtonsContainer = document.querySelector(".letter-buttons");
+
+        function updateWordDisplay() {
+            wordDisplay.textContent = displayedWord.join(" ");
+        }
+
+        function createLetterButtons() {
+            const alphabet = "abcdefghijklmnopqrstuvwxyz";
+            alphabet.split("").forEach(letter => {
+                const button = document.createElement("button");
+                button.textContent = letter;
+                button.addEventListener("click", () => handleLetterClick(letter, button));
+                letterButtonsContainer.appendChild(button);
+            });
+        }
+
+        function handleLetterClick(letter, button) {
+            button.disabled = true;
+
+            if (guessedLetters.includes(letter)) return;
+
+            guessedLetters.push(letter);
+            let correctGuess = false;
+
+            for (let i = 0; i < selectedWord.length; i++) {
+                if (selectedWord[i] === letter) {
+                    displayedWord[i] = letter;
+                    correctGuess = true;
+                }
+            }
+
+            if (!correctGuess) {
+                attempts--;
+                hangmanImage.src = `images/hang${6 - attempts}.png`;
+            }
+
+            updateWordDisplay();
+            checkGameStatus();
+        }
+
+        function checkGameStatus() {
+            if (displayedWord.join("") === selectedWord) {
+                message.textContent = "¡Ganaste! Has adivinado la palabra.";
+            } else if (attempts === 0) {
+                message.textContent = `¡Perdiste! La palabra era: ${selectedWord}`;
+            }
+        }
+
+        createLetterButtons();
+        updateWordDisplay();
+    </script>
+</body>
+</html>
+
